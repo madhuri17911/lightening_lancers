@@ -8,16 +8,22 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 # For macOS or Linux, you may not need to set this path if tesseract is already in PATH
 
 # Function to extract text from an image file (from request.files)
+# Function to extract text from an image file (from request.files)
 def extract_text_from_image(file):
     try:
-        # Ensure the file is a valid image by reading it directly into memory
+        # Read the image into memory
         img = Image.open(BytesIO(file.read()))  # Read the image directly from the file object
-        img.verify()  # Verify that it's an image (raises an exception if not)
+
+        # Optionally verify the image to ensure it's an image (this won't help with text extraction)
+        # img.verify()  # Uncomment if you want to verify image format but remember it may not allow text extraction afterward
+
+        # Fully load the image and extract text
         text = pytesseract.image_to_string(img)  # Extract text using Tesseract
         return text
     except Exception as e:
-        print("Error processing image:", e)
-        return None
+        print("Error processing image:", e)  # Log the specific error
+        return None  # Return None if there's an issue
+
 
 # Function to extract Aadhaar number and Name
 def extract_aadhaar_and_name(text):
