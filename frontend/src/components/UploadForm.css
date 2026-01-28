@@ -1,0 +1,35 @@
+/* UploadForm.css */
+
+/* Styling for the MagicBus title */
+.magicbus-heading {
+    font-size: 2rem;   /* Smaller font size */
+    font-weight: bold; /* Make it bold */
+    color: #007bff;    /* MagicBus blue color */
+    margin-bottom: 1rem;
+    text-transform: uppercase;  /* Add uppercase styling */
+}
+
+/* Styling for the second heading */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333; /* Darker text for better readability */
+    margin-bottom: 2rem;  /* Add some spacing below */
+}
+
+/* Custom style for the form */
+.bg-light {
+    background-color: #f8f9fa !important; /* Light background for the form */
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+/* Add a border radius and shadow to the form */
+.form-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

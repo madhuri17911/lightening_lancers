@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import './UploadForm.css';  // Make sure you have a separate CSS file for styles
 
 const UploadForm = ({ onNext }) => {
     const [file, setFile] = useState(null);
@@ -41,7 +42,7 @@ const UploadForm = ({ onNext }) => {
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                     <div className="text-center mb-4">
-                        <h2>Upload Your Document</h2>
+                        <h2 className="magicbus-heading">Welcome to MagicBus user onboarding process</h2>
                     </div>
 
                     {/* Form for file upload */}
