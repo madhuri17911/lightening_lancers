@@ -46,15 +46,13 @@ const UploadForm = ({ onNext }) => {
 
                     {/* Form for file upload */}
                     <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
-                        <Form.Group controlId="fileUpload">
-                            <Form.Label>Choose a file to upload</Form.Label>
-                            <Form.Control
-                                type="file"
-                                onChange={handleFileChange}
-                                required
-                                className="mb-3"
-                            />
-                        </Form.Group>
+                        <Form.Control
+                            type="file"
+                            onChange={handleFileChange}
+                            accept="image/jpeg, image/png, image/jpg"
+                            required
+                            className="mb-3"
+                        />
 
                         <Button type="submit" variant="primary" className="w-100">
                             Upload

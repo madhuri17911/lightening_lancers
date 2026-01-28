@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS
 from extract_data import process_image  # Import the function from extract_data.py
+import imageio
 
 app = Flask(__name__)
 CORS(app)
@@ -27,9 +28,9 @@ def extract_data():
     try:
         if 'file' not in request.files:
             return jsonify({'error': 'No file part'}), 400
-
+        
         file = request.files['file']
-
+        print(file.filename)
         if file.filename == '':
             return jsonify({'error': 'No selected file'}), 400
 
@@ -45,6 +46,7 @@ def extract_data():
 
             # Process the image to extract data
             result = process_image(file)  # Pass the file object to process_image
+            print(result)
 
             if 'error' in result:
                 return jsonify(result), 500  # Return the error if processing fails
