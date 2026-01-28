@@ -1,0 +1,5 @@
+.card:hover {
+    transform: scale(1.05);  /* Slightly enlarge the card on hover */
+    cursor: pointer;  /* Change cursor to indicate clickable area */
+    transition: transform 0.3s ease-in-out;  /* Smooth transition */
+}
